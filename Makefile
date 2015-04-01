@@ -8,7 +8,12 @@ CXXFLAGS=-L${LIBRARY_DIR} -I${INCLUDE_DIR} -march=native -O2 -g -std=c++11 -fPIC
 
 all: libtxtable.so libtxtable.a test
 
-install: libtxtable.so libtxtable.a txtable.h
+install: libtxtable.so libtxtable.a src/txtable.h
+	mkdir -p ${DESTDIR}/${PREFIX}/lib
+	mkdir -p ${DESTDIR}/${PREFIX}/include
+	cp *.a ${DESTDIR}/${PREFIX}/lib
+	cp *.so ${DESTDIR}/${PREFIX}/lib
+	cp src/*.h ${DESTDIR}/${PREFIX}/include
 
 test: src/test.cc src/txtable.h txtable.o
 	${CXX} ${CXXFLAGS} -o test src/test.cc txtable.o
