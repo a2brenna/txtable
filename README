@@ -1,0 +1,12 @@
+A simple C++ library for pretty printing tables. Automatically formats width of
+columns depending on the largest element in each column.
+
+For example:
+
+------------------------------------
+| foolishness|    bar|          baz|
+------------------------------------
+|         foo| barbie| bazbazxsdflj|
+------------------------------------
+|         foo|    bar|          baz|
+------------------------------------
