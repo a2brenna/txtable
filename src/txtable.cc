@@ -8,14 +8,14 @@ const std::vector<std::vector<std::string>> Table::rows() const{
     return _rows;
 }
 
-void Table::add_row(const std::vector<std::string> &new_row){
+bool Table::add_row(const std::vector<std::string> &new_row){
     if(_headings.size() == new_row.size()){
         _rows.push_back(new_row);
+        return true;
     }
     else{
-        throw Bad_Row();
+        return false;
     }
-    return;
 }
 
 Table::Table(const std::vector<std::string> &headings){

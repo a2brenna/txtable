@@ -6,10 +6,6 @@
 #include <vector>
 #include <iomanip> //for std::setw()
 
-class Bad_Row{
-
-};
-
 class Table {
 
     private:
@@ -21,7 +17,7 @@ class Table {
 
         const std::vector<std::string> heading() const;
         const std::vector<std::vector<std::string>> rows() const;
-        void add_row(const std::vector<std::string> &new_row);
+        bool add_row(const std::vector<std::string> &new_row);
         Table(const std::vector<std::string> &headings);
 
 };
