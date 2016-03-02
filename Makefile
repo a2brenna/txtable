@@ -14,10 +14,9 @@ install: libtxtable.so libtxtable.a src/txtable.h
 	cp *.a ${DESTDIR}/${PREFIX}/lib
 	cp *.so ${DESTDIR}/${PREFIX}/lib
 	cp src/*.h ${DESTDIR}/${PREFIX}/include
-
-    chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.so
-    chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.a
-    chmod -R 544 ${DESTDIR}/${PREFIX}/include/txtable.h
+	chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.so
+	chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.a
+	chmod -R 544 ${DESTDIR}/${PREFIX}/include/txtable.h
 
 uninstall:
 	rm ${DESTDIR}/${PREFIX}/lib/libtxtable.so
