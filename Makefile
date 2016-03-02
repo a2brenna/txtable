@@ -19,6 +19,11 @@ install: libtxtable.so libtxtable.a src/txtable.h
     chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.a
     chmod -R 544 ${DESTDIR}/${PREFIX}/include/txtable.h
 
+uninstall:
+    rm ${DESTDIR}/${PREFIX}/lib/libtxtable.so
+    rm ${DESTDIR}/${PREFIX}/lib/libtxtable.a
+    rm ${DESTDIR}/${PREFIX}/include/txtable.h
+
 test: src/test.cc src/txtable.h txtable.o
 	${CXX} ${CXXFLAGS} -o test src/test.cc txtable.o
 
