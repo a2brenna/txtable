@@ -15,6 +15,10 @@ install: libtxtable.so libtxtable.a src/txtable.h
 	cp *.so ${DESTDIR}/${PREFIX}/lib
 	cp src/*.h ${DESTDIR}/${PREFIX}/include
 
+    chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.so
+    chmod -R 544 ${DESTDIR}/${PREFIX}/lib/libtxtable.a
+    chmod -R 544 ${DESTDIR}/${PREFIX}/include/txtable.h
+
 test: src/test.cc src/txtable.h txtable.o
 	${CXX} ${CXXFLAGS} -o test src/test.cc txtable.o
 
